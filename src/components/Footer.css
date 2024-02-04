@@ -1,0 +1,42 @@
+.footer {
+        width:50%;
+        height: 15%;
+        background-color: #333;
+        padding: 1em;
+        margin: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        gap: 1em;
+}
+
+.input-text {
+        width: 80%;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+}
+
+.send-button {
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+.input-author{
+        width: 70%;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+}
+
+.footer_author{
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+}
