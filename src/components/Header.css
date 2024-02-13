@@ -1,4 +1,4 @@
-.header {
+/* .header {
   width: 50%;
   height: 15%;
   background-color: #333;
@@ -22,3 +22,11 @@
 h2{
   font-size: larger;
 }
+
+
+.header_author{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+} */

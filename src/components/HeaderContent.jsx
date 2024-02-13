@@ -1,6 +1,15 @@
-import React from 'react';
-import canardImage from '../media/canard.jpg';
+import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 export default function avatar() {
-  return <img className='image' src={canardImage} alt="canard" />;
+  const userName = localStorage.getItem("User");
+
+  return (
+    <>
+      <div>Current user : {userName}</div>
+      <Link to="/user">
+        <Button variant="contained">Changer de User</Button>
+      </Link>
+    </>
+  );
 }

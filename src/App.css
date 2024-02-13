@@ -1,36 +1,222 @@
 :root {
+  --primary-color: rgb(19, 31, 43);
+  --secondary-color: #fff;
+  --accent-color: #4caf50;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --background-color: #242424;
+}
+
+body {
+  margin: 0;
+  padding: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  font-weight: lighter;
+  color: var(--text-color);
+  background-color: var(--background-color);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+  width: 50%;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 10px;
+}
+
 .background {
-  
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  min-height: 100vh;
+  gap: 10px;
+  background-color: rgb(15, 25, 36);
+}
+
+.header,
+.footer,
+.bubblelist-container {
+  width: 80%;
+  padding: 1em;
+  border-radius: 10px;
+  border: 1px solid rgb(66, 66, 66); /* Bordure solide grise d'une épaisseur de 1px */
+  margin: 0 auto; /* Centre les éléments horizontalement */
+  margin-bottom: 20px; /* Ajout d'un espacement en bas */
+}
+
+.header {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: X-large;
+}
+
+
+.header h2 {
+  width: auto;
+  font-size: xxx-large;
+  font-stretch:expanded;
+}
+
+.header_author {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.footer {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: wrap;
+  align-items: center;
+  font-size: xx-large;
+  gap: 15px;
+}
+
+
+
+.sender {
+  width: 90%;
+  display: flex;
+  gap: 8px;
+}
+
+.input-text,
+.input-author {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  width: 90%;
+}
+
+
+.input-author {
+  width: 25%;
+}
+
+.send-button {
+  padding: 8px 16px;
+  height: 5em;
+  width: 25%;
 }
 
 .menu {
   display: flex;
+  padding-right: 16px;
+  flex-direction: column;
   gap: 2em;
 }
 
-.effacer{
+.effacer {
   background-color: red;
   border-radius: 5px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+}
+
+.bubblelist-container {
+  display: flex;
+  background-color: var(--primary-color);
+  padding: 20px;
+  border-radius: 10px;
+  overflow: scroll;
+  height: max-content;
+  justify-content: center;
+}
+
+.bubblefriend {
+  width: fit-content;
+  background-color: rgb(1, 18, 128);
+  border-radius: 10px;
+  padding: 8px 16px;
+  margin-right: auto;
+  box-shadow: 10px 5px 5px rgb(0, 0, 0);
+  border: 1px solid gray;
+ 
+}
+
+.bubbleuser {
+  width: fit-content;
+  background-color: rgb(20, 18, 27);
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 8px 16px;
+  margin-left: auto;
+  box-shadow: 10px 5px 5px rgb(0, 0, 0);
+}
+
+.date {
+  background-color:black;
+  border: 1px solid gray;
+  border-radius: 10px;
+  text-align: center;
+  padding: 8px 16px;
+  box-shadow: 10px 5px 5px rgb(0, 0, 0);
+}
+
+.bubbles {
+  width: 70%; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+.avatar {
+  width: 50px;
+  height: 45px;
+  border-radius: 300%;
+}
+
+.name {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.date {
+  font-style: initial;
+  font-size: x-small;
+  align-self: flex-end;
+  margin-top: 5%;
+  margin-left: auto; /* Centrer horizontalement */
+  margin-right: auto; /* Centrer horizontalement */
+}
+
+.text {
+  font-size: large;
+}
+
+@media screen and (max-width: 700px) {
+  .footer {
+    flex-direction: column-reverse; /* Inverser l'ordre des éléments, mettant Textform en premier */
+  }
+  .sender {
+    display: flex;
+    flex-direction: column;
+  }
+  .header h2 {
+    font-size: larger; /* Nouvelle taille de police */
+  }
+  .menu {
+    display: flex;
+    border-top: 1px solid rgb(66, 66, 66);
+    padding-top: 5px;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .send-button {
+    padding: 8px 16px;
+    width: fit-content;
+   ;
+  }
 }

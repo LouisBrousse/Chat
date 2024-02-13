@@ -1,42 +1,61 @@
-.footer {
-        width:50%;
-        height: 15%;
-        background-color: #333;
-        padding: 1em;
-        margin: 1em;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 10px;
-        gap: 1em;
+/* .footer {
+  width: 50%;
+  height: 15%;
+  background-color: #333;
+  padding: 1em;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  font-size: xx-large;
+  gap: 20px;
+}
+
+.sender {
+  width: 90%;
+  display: flex;
+  gap: 8px;
 }
 
 .input-text {
-        width: 80%;
-        padding: 12px;
-        border: none;
-        border-radius: 5px;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  width: 80%;
+  height: 25%;
+}
+
+.input-author {
+  padding: 12px;
+  width: 25%;
+  border: none;
+  border-radius: 5px;
 }
 
 .send-button {
-        padding: 8px 16px;
-        background-color: #4CAF50;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 25%;
 }
 
-.input-author{
-        width: 70%;
-        padding: 12px;
-        border: none;
-        border-radius: 5px;
+.menu {
+  display: flex;
+  gap: 2em;
 }
 
-.footer_author{
-        width: fit-content;
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
+.effacer {
+  background-color: red;
+  border-radius: 5px;
 }
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+} */

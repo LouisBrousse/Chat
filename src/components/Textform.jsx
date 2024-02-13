@@ -1,51 +1,64 @@
 import "./Footer.css";
 import { useState } from "react";
+import { useChat } from "../ChatProvider.jsx";
 
-export default function Textform({ sendMessage }) {
+import SendIcon from '@mui/icons-material/Send';
+import Stack from '@mui/material/Stack';
+
+import Button from '@mui/material/Button';
+
+
+
+export default function Textform({ user }) {
+  const { sendMessage } = useChat(); 
+
+ 
+  
   const [message, setMessage] = useState({
     author: "",
     text: "",
     date: "",
-    user: "",
+    userVerified: false,
   });
 
   const handleChange = (e) => {
     const currentDate = new Date();
     const formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}  ${currentDate.getHours()}:${currentDate.getMinutes()}`;
+    const userVerifiedResult = user === message.author ? true : false;
+    console.log('userVerifiedResult est arrivé :', userVerifiedResult)
 
     setMessage({
       ...message,
       [e.target.name]: e.target.value,
+      userVerified: userVerifiedResult,
       date: formattedDate,
-      
     });
-    
   };
 
-  const handleUSer = (e) => {
-  
-    setMessage({
-      ...message,
-      user: e.target.checked ? "user" : "", 
-    });
-    
-  };
+ 
 
   const handleSendMessage = () => {
     // console.log('message a envoyer :',message)
+   // Vérifier si les champs author et text sont remplis
+  if (message.author.trim() !== "" && message.text.trim() !== "") {
+    // Si les champs sont remplis, envoyer le message
     sendMessage(message);
+    // Réinitialiser les champs du formulaire
     setMessage({
       author: "",
       text: "",
       date: "",
-      user: "",
-   
+      userVerified: false,
     });
+  } else {
+    // Si l'un des champs est vide, afficher un message d'erreur ou prendre une autre action
+    alert("Please fill in both author and message fields.");
+  }
   };
- 
+
   return (
-    <div className="footer">
-      <div className="footer_author">
+    <div className="sender">
+      <div className="inputs">
         <input
           type="text"
           name="author"
@@ -54,32 +67,22 @@ export default function Textform({ sendMessage }) {
           value={message.author}
           onChange={handleChange}
         />
-        <div className="checkBox">
-        <div className="footer_user">
-          <label htmlFor="user">User</label>
-            <input
-              type="checkbox"
-              id="user"
-              name="user"
-              className="checkBox-user"
-              checked={message.user === "user"}
-              onChange={handleUSer}
-            />
-          </div>
-          
-        </div>
+
+        <textarea
+          type="text"
+          name="text"
+          className="input-text"
+          placeholder="Type your message..."
+          value={message.text}
+          onChange={handleChange}
+          rows="4" // Définir le nombre de lignes visibles
+          cols="50" // Définir le nombre de colonnes visibles
+        />
       </div>
-      <input
-        type="text"
-        name="text"
-        className="input-text"
-        placeholder="Type your message..."
-        value={message.text}
-        onChange={handleChange}
-      />
-      <button className="send-button" onClick={handleSendMessage}>
+
+      <Button className="send-button" onClick={handleSendMessage} variant="contained" color="success" endIcon={<SendIcon />}>
         Send
-      </button>
+      </Button>
     </div>
   );
 }

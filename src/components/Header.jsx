@@ -1,13 +1,16 @@
-// import HeaderContent from "./HeaderContent.jsx";
+import HeaderContent from "./HeaderContent.jsx";
 import './Header.css'
+
+
+
 
 
 export default function Header() {
   
   return (
     <div className="header">
-      <h2>Le Chat de Louis</h2>
-      {/* <HeaderContent /> */}
+      <h2>LE CHAT DE LOUIS</h2>
+      <HeaderContent />
     </div>
   );
 }
