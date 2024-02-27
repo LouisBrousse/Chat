@@ -40,12 +40,12 @@ body {
 .header,
 .footer,
 .bubblelist-container {
+  max-width: 700px;
   width: 80%;
-  padding: 1em;
+  padding: 4px;
   border-radius: 10px;
   border: 1px solid rgb(66, 66, 66); /* Bordure solide grise d'une épaisseur de 1px */
-  margin: 0 auto; /* Centre les éléments horizontalement */
-  margin-bottom: 20px; /* Ajout d'un espacement en bas */
+  margin: auto; /* Centre les éléments horizontalement */
 }
 
 .header {
@@ -53,20 +53,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: X-large;
+  font-size: 1rem;
+  height: fit-content;
+  padding: 5px;
+  gap: 4px;
 }
-
 
 .header h2 {
   width: auto;
-  font-size: xxx-large;
-  font-stretch:expanded;
+  font-size: 3rem;
+  font-stretch: expanded;
 }
 
 .header_author {
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+
+
+.header_button_container {
+  padding: 15px;
+}
+.header_button {
+ font-size: 1px;
+ 
 }
 
 .footer {
@@ -77,8 +88,6 @@ body {
   font-size: xx-large;
   gap: 15px;
 }
-
-
 
 .sender {
   width: 90%;
@@ -93,7 +102,6 @@ body {
   border-radius: 5px;
   width: 90%;
 }
-
 
 .input-author {
   width: 25%;
@@ -130,7 +138,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   overflow: scroll;
-  height: max-content;
+  height: 70vh;
   justify-content: center;
 }
 
@@ -142,7 +150,6 @@ body {
   margin-right: auto;
   box-shadow: 10px 5px 5px rgb(0, 0, 0);
   border: 1px solid gray;
- 
 }
 
 .bubbleuser {
@@ -156,7 +163,7 @@ body {
 }
 
 .date {
-  background-color:black;
+  background-color: black;
   border: 1px solid gray;
   border-radius: 10px;
   text-align: center;
@@ -165,11 +172,11 @@ body {
 }
 
 .bubbles {
-  width: 70%; 
+  width: 70%;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
+
 }
 
 .avatar {
@@ -180,7 +187,7 @@ body {
 
 .name {
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2rem;
 }
 
 .date {
@@ -217,6 +224,5 @@ body {
   .send-button {
     padding: 8px 16px;
     width: fit-content;
-   ;
   }
 }

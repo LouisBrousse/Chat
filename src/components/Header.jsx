@@ -1,7 +1,4 @@
 import HeaderContent from "./HeaderContent.jsx";
-import './Header.css'
-
-
 
 
 

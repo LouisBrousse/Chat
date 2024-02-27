@@ -1,7 +1,6 @@
-import "./Footer.css";
 import { useChat } from "../ChatProvider.jsx";
-import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
+import Button from "@mui/material/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function MessageMgmt() {
   const { clearMessages, messages } = useChat();
@@ -20,7 +19,13 @@ export default function MessageMgmt() {
         Console
       </Button>
 
-      <Button className="effacer" onClick={effaceHandler} variant="outlined" color="error" startIcon={<DeleteIcon />}>
+      <Button
+        className="effacer"
+        onClick={effaceHandler}
+        variant="outlined"
+        color="error"
+        startIcon={<DeleteIcon />}
+      >
         Effacer les messages
       </Button>
     </div>
